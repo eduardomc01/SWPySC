@@ -1,0 +1,30 @@
+
+<script src="../../../../node_modules/chart.js/src/chart.js"></script>
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-sm-3'>
+      <app-nav-menu-ci></app-nav-menu-ci>
+    </div>
+    <div class='col-sm-9 body-content'>
+
+        <h1> ESTADISTICAS </h1>
+
+      <div style="display: block;" (mouseover)="EstadisticasBarra()">
+        <canvas baseChart width="450" height="200"
+                [data]="doughnutChartData"
+                [labels]="doughnutChartLabels"
+                [chartType]="doughnutChartType"></canvas>
+      </div>
+      <br />
+      <div style="display: block">
+        <canvas baseChart
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [legend]="barChartLegend"
+                [chartType]="barChartType"></canvas>
+      </div>
+      <br />
+    </div>
+  </div>
+</div>

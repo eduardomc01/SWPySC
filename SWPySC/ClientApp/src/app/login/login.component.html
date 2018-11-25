@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> SWPySC </title>
+</head>
+<body>
+  <div class="allback">
+    <div class="back">
+      <form (ngSubmit)="VerifyUser()">
+        <h1> Sistema Web de Prevención y Seguridad Ciudadana </h1>
+        <div>
+          <span id="logo" class="icon-user"> </span>
+          <input class="textbox" type="text" placeholder="Usuario" name="user" [(ngModel)]="user" />
+        </div>
+        <div>
+          <span id="logo" class="icon-key2"> </span>
+          <input class="textbox" type="password" placeholder="Contraseña" name="pass" [(ngModel)]="pass" />
+        </div>
+        <input class="btn" type="submit" value="Ingresar" />
+        <input class="btn" type="reset" value="Cancelar" />
+      </form>
+      <br />
+      <a [routerLink]='["/"]'> Modo Ciudadano </a>
+      <br />
+    </div>
+  </div>
+
+</body>
+</html>

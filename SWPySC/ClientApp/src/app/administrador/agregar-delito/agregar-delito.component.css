@@ -1,0 +1,33 @@
+
+agm-map {
+
+  height: 500px;
+}
+
+h1 {
+  text-align: center;
+}
+
+
+#logo {
+  position: absolute;
+  overflow: auto;
+  margin: 10px 0px 0px 10px;
+}
+
+#text {
+  padding-left: 30px;
+}
+
+
+@media ( max-width: 800px) {
+
+  h1 {
+    margin-top: 60px;
+  }
+
+
+  agm-map {
+    height: 250px;
+  }
+}

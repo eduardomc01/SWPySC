@@ -1,0 +1,59 @@
+
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-sm-3'>
+      <app-nav-menu></app-nav-menu>
+    </div>
+    <div class='col-sm-9 body-content'>
+
+      <h1>{{ title }}</h1>
+
+      <agm-map [latitude]="19.1653" [longitude]="-96.1143" [zoom]="14">
+        <agm-circle *ngFor="let i of d"
+                    [latitude]="i.latitud"
+                    [longitude]="i.longitud"
+                    [fillOpacity]=".2"
+                    [radius]="100"
+                    [fillColor]="'red'"
+                    [circleDraggable]="false">
+
+          <agm-marker *ngFor="let i of d"
+                      [latitude]="i.latitud"
+                      [longitude]="i.longitud">
+
+            <agm-info-window>
+              <strong> Dirección: [{{ i.direccion }}] </strong>
+              <strong>  Código: [{{ i.idCodigo }}] </strong>
+            </agm-info-window>
+
+          </agm-marker>
+
+        </agm-circle>
+      </agm-map>
+
+      <h1>{{ title_table }}</h1>
+
+
+      <table class="table">
+
+        <thead>
+          <tr>
+            <th> Dirección </th>
+            <th> Latitud </th>
+            <th> Longitud </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let i of d">
+            <td> {{i.direccion }}</td>
+            <td> {{i.latitud}} </td>
+            <td> {{i.longitud}} </td>
+          </tr>
+        </tbody>
+
+      </table>
+
+    </div>
+  </div>
+</div>

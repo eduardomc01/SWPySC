@@ -1,0 +1,79 @@
+body {
+  background: url(../../assets/img/fondo-maps.jpg) no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  margin: -100px 0 0 0;
+}
+
+h1 {
+  margin-bottom: 50px;
+  color: white;
+}
+
+.allback {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.back {
+  background-color: #1b343b;
+  margin: 100px auto 100px auto;
+  padding: 120px 10px 120px 10px;
+  box-shadow: rgba(238, 185, 40, 0.80) -13px 2px 1px 10px;
+  max-width: 30%;
+  max-height: 30%;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+
+.textbox {
+  margin: 12px auto 12px auto;
+  padding: 10px 0px 10px 30px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: none;
+  outline-style: none;
+}
+
+  .textbox:focus {
+    box-shadow: 0 0 5px darkcyan;
+  }
+
+
+.btn {
+  background-color: darkcyan;
+  color: white;
+  outline-style: none;
+  border: none;
+}
+
+#logo {
+  position: absolute;
+  overflow: auto;
+  margin: 25px 0px 0px 10px;
+}
+
+
+
+@media (max-width: 800px) {
+
+  .back {
+    margin: 90px auto 90px auto;
+    padding: 80px 10px 80px 10px;
+    max-width: 80%;
+    max-height: 30%;
+
+  }
+
+
+  .textbox {
+    width: 50%;
+    padding: 10px 0px 10px 30px;
+  }
+
+
+}

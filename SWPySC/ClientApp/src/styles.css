@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+.centrar{
+  text-align: center;
+  margin-top: 25px;
+}
+
+progress{
+  
+  width: 500px;
+  height: 50px;
+
+}

@@ -1,0 +1,40 @@
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-sm-3'>
+      <app-nav-menu-sa></app-nav-menu-sa>
+    </div>
+    <div class='col-sm-9 body-content'>
+
+      <h1> REGISTRAR ADMINISTRADORES </h1>
+
+      <form (ngSubmit)="registerAdmin()">
+
+        <label> Nombre </label>
+
+        <div>
+          <span id="logo" class="icon-user"></span>
+          <input type="text" id="text" name="name" class="form-control" [(ngModel)]="name" required />
+        </div>
+
+        <br>
+
+        <label> Correo electronico </label>
+        <div>
+          <span id="logo" class="icon-envelop"></span>
+          <input type="text" id="text" name="email" class="form-control" [(ngModel)]="email" required />
+        </div>
+
+        <br>
+
+        <label> Contraseña </label>
+        <div>
+          <span id="logo" class="icon-eye-blocked"></span>
+          <input type="text" id="text" name="pass" class="form-control" [(ngModel)]="pass" required />
+          <br>
+        </div>
+
+        <input type="submit" value="Guardar datos" class="btn btn-primary" required />
+      </form>
+    </div>
+  </div>
+</div>

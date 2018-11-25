@@ -1,0 +1,82 @@
+
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-sm-3'>
+      <app-nav-menu></app-nav-menu>
+    </div>
+    <div class='col-sm-9 body-content'>
+      <div>
+        <h1>{{ title }}</h1>
+        <agm-map [latitude]="19.1653" [longitude]="-96.1143" [zoom]="14" (mapClick)="MapClicked($event)">
+          <agm-marker *ngFor="let i of d"
+                      [latitude]="i.latitud"
+                      [longitude]="i.longitud"
+                      [markerDraggable]="true"
+                      (markerRightClick)="MarkerDelet()">
+          </agm-marker>
+        </agm-map>
+      </div>
+      <div>
+        <h1> {{ subtitle }} </h1>
+
+        <label> Latitud </label>
+        <br>
+        <div>
+          <span class="icon-location" id="logo"></span>
+          <input type="number" id="text" [(ngModel)]="lat" class="form-control" />
+        </div>
+        <br>
+        <label> Longitud </label>
+        <br>
+        <div>
+          <span class="icon-location" id="logo"></span>
+          <input type="number" id="text" [(ngModel)]="long" class="form-control" />
+        </div>
+        <br>
+        <form (ngSubmit)="registerCrime()">
+          <label> Dirección </label>
+          <br>
+          <div>
+            <span class="icon-compass" id="logo"></span>
+            <input type="text" id="text" [(ngModel)]="direccion" name="direccion" class="form-control" />
+          </div>
+          <br>
+          <label> Código postal  </label>
+          <br>
+          <div>
+            <span class="icon-flag" id="logo"></span>
+            <input type="text" id="text" [(ngModel)]="cp" name="cp" class="form-control" />
+          </div>
+          <br>
+          <label> Grado del delito </label>
+          <div>
+            <span class="icon-fire" id="logo"></span>
+            <select class="form-control" id="text" [(ngModel)]="grado_delito" name="grado_delito" (click)="CrimeCodes()">
+              <option *ngFor="let i of y" value="{{ i.id }}"> {{ i.tipo }} | {{ i.comentario }} </option>
+            </select>
+          </div>
+          <br>
+          <label> Tipo de delito </label>
+          <div>
+            <span class="icon-fire" id="logo"></span>
+            <select class="form-control" id="text" [(ngModel)]="tipo_delito" name="tipo_delito">
+              <option *ngFor="let i of x" value="{{ i.id }}"> {{ i.tipo }} | {{ i.comentario }} </option>
+            </select>
+          </div>
+          <br>
+          <label> Fecha del delito </label>
+          <div>
+            <span class="icon-flag" id="logo"></span>
+            <input type="date" id="text" [(ngModel)]="date" name="date" class="form-control" />
+          </div>
+          <br>
+          <br>
+
+          <input type="submit" value="Guardar datos" class="btn btn-primary" required />
+        </form>
+        <br>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>

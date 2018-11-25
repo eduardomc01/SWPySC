@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SWPySC</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root>
+  <div class="centrar">
+    <p><b> Cargando la página... </b></p>
+    <progress id="barra" class="centrar" ></progress>
+    <span></span>
+  </div>
+  </app-root>
+
+  <script type="text/javascript">
+
+    window.onload = function () {
+
+      animateprogress("barra", 30);
+
+    }
+
+  </script>
+
+</body>
+
+</html>

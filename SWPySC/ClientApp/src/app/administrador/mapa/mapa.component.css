@@ -1,0 +1,21 @@
+
+agm-map {
+  height: 500px;
+}
+
+h1 {
+  text-align: center;
+}
+
+
+@media ( max-width: 800px) {
+
+  h1 {
+    margin-top: 60px;
+  }
+
+
+  agm-map {
+    height: 250px;
+  }
+}
