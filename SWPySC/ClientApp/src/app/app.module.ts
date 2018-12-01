@@ -25,6 +25,7 @@ import { NavMenuCiComponent } from './ciudadano/nav-menu-ci/nav-menu-ci.componen
 import { MapaCiComponent } from './ciudadano/mapa-ci/mapa-ci.component';
 import { EstadisticasCiComponent } from './ciudadano/estadisticas-ci/estadisticas-ci.component';
 
+import { PerfilSaComponent } from './super_administrador/perfil-sa/perfil-sa.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,9 @@ import { EstadisticasCiComponent } from './ciudadano/estadisticas-ci/estadistica
     NavMenuCiComponent,
     MapaCiComponent,
     EstadisticasCiComponent,
-     
+
+    PerfilSaComponent,
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -58,6 +61,7 @@ import { EstadisticasCiComponent } from './ciudadano/estadisticas-ci/estadistica
       { path: 'mapa', component: MapaComponent },
       { path: 'agregar-delito', component: AgregarDelitoComponent },
       { path: 'home-sa', component: HomeSaComponent },
+      { path: 'perfil-sa', component: PerfilSaComponent },
       { path: 'register', component: RegisterComponent },
       { path: 'estadisticas', component: EstadisticasComponent },
       { path: 'mapa-ci', component: MapaCiComponent },

@@ -3,6 +3,10 @@ h1 {
   text-align: center;
 }
 
+div .logo{
+  text-align: center;
+}
+
 @media ( max-width: 800px) {
 
   h1 {
