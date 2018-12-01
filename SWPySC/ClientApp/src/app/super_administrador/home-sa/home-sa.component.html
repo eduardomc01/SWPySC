@@ -4,14 +4,39 @@
       <app-nav-menu-sa></app-nav-menu-sa>
     </div>
     <div class='col-sm-9 body-content'>
-
-       <h1> SUPER-ADMIN </h1>
-
       <div class="logo">
-
-        <img src="../../../assets/img/proteccion_civil.jpg"/>
-        
+        <img src="../../../assets/img/proteccion_civil.png" />
       </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th colspan="2" style="text-align:center;"> <h1> <b> Información de usuario </b> </h1> </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th> Nombre </th>
+            <td> {{ name }} </td>
+          </tr>
+          <tr>
+            <th> Usuario </th>
+            <td> {{ user }} </td>
+          </tr>
+          <tr>
+            <th> Fecha de inicio de sesión </th>
+            <td> {{ date }} </td>
+          </tr>
+          <tr>
+            <th> Tipo de sesión </th>
+            <td> {{ type_user }} </td>
+          </tr>
+        </tbody>
+
+      </table>
+
+      <footer style="text-align: center; margin-top:130px;"> <p> Derechos reservados - Ingeniería Informática UV 2018 <sup> TM </sup> </p> </footer>
 
     </div>
   </div>

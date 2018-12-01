@@ -77,11 +77,30 @@ namespace SWPySC.Controllers
         }
 
 
+        [HttpGet("[action]")]
+        public List<Datas> GetAdministratorDatasHome(int id)
+        {
 
+            var context = HttpContext.RequestServices.GetService(typeof(swpyscContext)) as swpyscContext;
 
+            var list = (from a in context.Registros
 
+                        join e in context.Tipousuarios on a.IdTipoUsuario equals e.Id
 
+                        where a.Id == id
+                        select new Datas
+                        {
 
+                            Nombre = a.Nombre,
+                            Correo = a.Correo,
+                            TipoUsuario = e.Tipo,
+                            Date = DateTime.Today.ToString("dd-MM-yyyy")
+
+                        }).ToList();
+
+            return list;
+
+        }
 
     }
 
