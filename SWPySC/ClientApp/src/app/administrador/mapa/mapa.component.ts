@@ -14,8 +14,7 @@ import { Router } from '@angular/router';
 
 export class MapaComponent {
 
-  title: string = 'Mapa';
-  title_table: string = 'Tabla de resultados';
+
   d: datas[];
 
 

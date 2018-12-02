@@ -4,3 +4,11 @@ th, td {
   text-align: center;
 
 }
+
+
+@media ( max-width: 800px) {
+
+  h1 {
+    margin-top: 60px;
+  }
+}

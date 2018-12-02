@@ -6,7 +6,7 @@
     </div>
     <div class='col-sm-9 body-content'>
       <div>
-        <h1>{{ title }}</h1>
+        <h1> <b> MAPA </b> </h1>
         <agm-map [latitude]="19.1653" [longitude]="-96.1143" [zoom]="14" (mapClick)="MapClicked($event)">
           <agm-marker *ngFor="let i of d"
                       [latitude]="i.latitud"
@@ -17,7 +17,7 @@
         </agm-map>
       </div>
       <div>
-        <h1> {{ subtitle }} </h1>
+        <h1> INFORMACIÓN DEL DELITO </h1>
 
         <label> Latitud </label>
         <br>

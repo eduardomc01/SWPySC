@@ -11,12 +11,7 @@ import { Router } from '@angular/router';
 })
 
 
-
-
 export class AgregarDelitoComponent{
-
-  title: string = "Mapa";
-  subtitle: string = "Agregar información del delito";
 
   lat: number;
   long: number;

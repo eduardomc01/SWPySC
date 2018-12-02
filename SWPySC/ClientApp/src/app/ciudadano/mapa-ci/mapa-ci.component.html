@@ -5,7 +5,7 @@
       <app-nav-menu-ci></app-nav-menu-ci>
     </div>
     <div class='col-sm-9 body-content'>
-      <h1>{{ title }}</h1>
+      <h1> <b> MAPA </b> </h1>
         <agm-map [latitude]="19.1653" [longitude]="-96.1143" [zoom]="14">
           <agm-circle *ngFor="let i of d"
                       [latitude]="i.latitud"
@@ -27,7 +27,7 @@
       <div>
         <br />
         <p>
-          Aqui se muestran los delitos recabados de denuncias de la ciudadania.
+         <b> Aqui se muestran los delitos recabados de denuncias en la ciudadania. </b>
         </p>
       </div>
     </div>

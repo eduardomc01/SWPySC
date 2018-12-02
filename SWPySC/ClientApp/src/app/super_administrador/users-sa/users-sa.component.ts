@@ -10,7 +10,7 @@ import { Router, RouterLink } from '@angular/router';
 
 export class UsersSaComponent {
 
-  d:[];
+  d:datas[];
 
   idUser: string = sessionStorage.getItem("idUser");
 
@@ -19,7 +19,7 @@ export class UsersSaComponent {
     if (sessionStorage.getItem("idUser") == null)
       this.router.navigate(["/Login"]);
 
-    this.http.get<[]>("SuperAdministrators/GetAllSuperAdministrator").subscribe(result => {
+    this.http.get<datas[]>("SuperAdministrators/GetAllSuperAdministrator").subscribe(result => {
 
       this.d = result; 
 
@@ -86,6 +86,10 @@ export class UsersSaComponent {
 
   }
 
+
+}
+
+interface datas {
 
 }
 
