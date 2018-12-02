@@ -3,9 +3,14 @@ h1 {
   text-align: center;
 }
 
-div .logo{
+table th {
   text-align: center;
 }
+
+table tfoot tr th {
+  margin-top: 120px;
+}
+
 
 @media ( max-width: 800px) {
 

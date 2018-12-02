@@ -19,7 +19,10 @@ li.link-active a:focus {
   z-index: 1;
 }
 
-
+.navbar {
+  border-left-width: 10px;
+  border-left-color: rgba(238, 185, 40, 0.80);
+}
 
 @media (min-width: 768px) {
   /* On small screens, convert the nav menu to a vertical sidebar */
@@ -31,6 +34,8 @@ li.link-active a:focus {
   .navbar {
     border-radius: 0px;
     border-width: 0px;
+    border-right-width: 10px;
+    border-right-color: rgba(238, 185, 40, 0.80);
     height: 100%;
   }
 
