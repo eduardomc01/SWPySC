@@ -22,6 +22,12 @@
         </li>
 
         <li [routerLinkActive]='["link-active"]'>
+          <a [routerLink]='["/users-sa"]' (click)='collapse()'>
+            <span class='icon-users'></span> Administradores
+          </a>
+        </li>
+
+        <li [routerLinkActive]='["link-active"]'>
           <a [routerLink]='["/register"]' (click)='collapse()'>
             <span class='icon-user-plus'></span> Registrar administrador
           </a>

@@ -14,18 +14,21 @@ import { HomeComponent } from './administrador/home/home.component';
 import { PerfilComponent } from './administrador/perfil/perfil.component';
 import { MapaComponent } from './administrador/mapa/mapa.component';
 import { LoginComponent } from './login/login.component';
+
 import { HomeSaComponent } from './super_administrador/home-sa/home-sa.component';
 import { NavMenuSaComponent } from './super_administrador/nav-menu-sa/nav-menu-sa.component';
+import { PerfilSaComponent } from './super_administrador/perfil-sa/perfil-sa.component';
+
 import { RegisterComponent } from './super_administrador/register/register.component';
 import { AgregarDelitoComponent } from './administrador/agregar-delito/agregar-delito.component';
 import { EstadisticasComponent } from './administrador/estadisticas/estadisticas.component';
+import { UsersSaComponent } from './super_administrador/users-sa/users-sa.component';
 
 import { HomeCiComponent } from './ciudadano/home-ci/home-ci.component';
 import { NavMenuCiComponent } from './ciudadano/nav-menu-ci/nav-menu-ci.component';
 import { MapaCiComponent } from './ciudadano/mapa-ci/mapa-ci.component';
 import { EstadisticasCiComponent } from './ciudadano/estadisticas-ci/estadisticas-ci.component';
 
-import { PerfilSaComponent } from './super_administrador/perfil-sa/perfil-sa.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +51,8 @@ import { PerfilSaComponent } from './super_administrador/perfil-sa/perfil-sa.com
 
     PerfilSaComponent,
 
+    UsersSaComponent,
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -66,6 +71,7 @@ import { PerfilSaComponent } from './super_administrador/perfil-sa/perfil-sa.com
       { path: 'estadisticas', component: EstadisticasComponent },
       { path: 'mapa-ci', component: MapaCiComponent },
       { path: 'estadisticas-ci', component: EstadisticasCiComponent },
+      { path: 'users-sa', component: UsersSaComponent },
       { path: '', component: HomeCiComponent },
   
 

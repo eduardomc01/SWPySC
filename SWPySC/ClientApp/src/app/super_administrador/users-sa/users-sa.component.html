@@ -1,0 +1,43 @@
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-sm-3'>
+      <app-nav-menu-sa></app-nav-menu-sa>
+    </div>
+    <div class='col-sm-9 body-content'>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th colspan="5" style="text-align: center;"> <h1> <b> Información de administradores </b> </h1> </th>
+          </tr>
+          <tr>
+            <th> ID </th>
+            <th> Nombre </th>
+            <th> Usuario </th>
+            <th> Estatus </th>
+            <th> Acciones </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let i of d">
+            <td> {{ i._Id }} </td>
+            <td> {{ i.nombre }} </td>
+            <td> {{ i.correo }} </td>
+            <td> {{ i.tipoEstatus }} </td>
+            <td>
+              <input type="button" class="btn btn-success" value="Alta" (click)="UpAdmin(i._Id)" />
+
+              <input type="button" class="btn btn-warning" value="Baja" (click)="DownAdmin(i._Id)" />
+
+              <input type="button" class="btn btn-danger" value="Eliminar" (click)="DeletAdmin(i._Id)" />
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+

@@ -75,14 +75,86 @@ namespace SWPySC.Controllers
 
         }
 
+
+
+        [HttpGet("[action]")]
+        public List<Datas> GetAllSuperAdministrator()
+        {
+
+            var context = HttpContext.RequestServices.GetService(typeof(swpyscContext)) as swpyscContext;
+
+            var list = (from a in context.Registros
+
+                        join e in context.Tipousuarios on a.IdTipoUsuario equals e.Id
+
+                        join o in context.Estatus on a.IdEstatus equals o.Id
+
+                        where a.IdTipoUsuario == 2
+
+                        select new Datas
+                        {
+                            _Id = a.Id,
+                            Nombre = a.Nombre,
+                            Correo = a.Correo,
+                            TipoUsuario = e.Tipo,
+                            TipoEstatus = o.Tipo
+
+                        }).ToList();
+
+            return list;
+
+        }
+
+
+
+
+
+        [HttpPost("[action]")]
+        public int EstatusSuperAdministrator(int op, [FromBody] int id)
+        {
+
+            var context = HttpContext.RequestServices.GetService(typeof(swpyscContext)) as swpyscContext;
+
+            var found = context.Registros.Find(id);
+
+            switch (op)
+            {
+
+                case 1:
+                    found.IdEstatus = 1;
+                    break;
+
+                case 2:
+                    found.IdEstatus = 2;
+                    break;
+
+                case 3:
+                    context.Registros.Attach(found);
+                    context.Registros.Remove(found);
+                    break;
+
+            }
+
+         
+            context.SaveChanges();
+
+            return 1;
+
+        }
+
+
+
+
     }
 
 
     public partial class Datas
     {
+        public int _Id { get; set; }
         public string Nombre { get; set; }
         public string Correo { get; set; }
         public string TipoUsuario { get; set; }
+        public string TipoEstatus { get; set; }
         public string Date { get; set; }
 
     }
