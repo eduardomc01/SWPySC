@@ -31,9 +31,6 @@ export class AgregarDelitoComponent{
     if (sessionStorage.getItem("idUser") == null)
       this.router.navigate(["/Login"]);
 
-
-
-
     this.CrimeGrade();
 
   }
@@ -41,6 +38,11 @@ export class AgregarDelitoComponent{
 
 
   registerCrime() {
+
+    if (!this.lat || !this.long || !this.direccion || !this.cp || !this.grado_delito || !this.tipo_delito || !this.date) {
+      alert("OJO: Campos sin rellenar, porfavor complete todos los campos porfavor");
+      return ;
+    }
 
     var json = JSON.stringify({ Latitud: this.lat, Longitud: this.long, Direccion: this.direccion, Cp: this.cp, IdGd: this.grado_delito, IdCodigo: this.tipo_delito, fecha: this.date });
 

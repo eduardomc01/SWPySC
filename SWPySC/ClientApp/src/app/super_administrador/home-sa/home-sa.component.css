@@ -1,14 +1,10 @@
 
-h1 {
-  text-align: center;
-}
-
 table th {
   text-align: center;
 }
 
-table tfoot tr th {
-  margin-top: 120px;
+table tfoot tr th p{
+  margin-top: 130px;
 }
 
 

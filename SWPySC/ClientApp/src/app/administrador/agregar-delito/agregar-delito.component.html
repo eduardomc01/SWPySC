@@ -23,14 +23,14 @@
         <br>
         <div>
           <span class="icon-location" id="logo"></span>
-          <input type="number" id="text" [(ngModel)]="lat" class="form-control" />
+          <input type="number" id="text" [(ngModel)]="lat" class="form-control" required readonly/>
         </div>
         <br>
         <label> Longitud </label>
         <br>
         <div>
           <span class="icon-location" id="logo"></span>
-          <input type="number" id="text" [(ngModel)]="long" class="form-control" />
+          <input type="number" id="text" [(ngModel)]="long" class="form-control" required readonly />
         </div>
         <br>
         <form (ngSubmit)="registerCrime()">
@@ -38,20 +38,21 @@
           <br>
           <div>
             <span class="icon-compass" id="logo"></span>
-            <input type="text" id="text" [(ngModel)]="direccion" name="direccion" class="form-control" />
+            <input type="text" id="text" [(ngModel)]="direccion" name="direccion" class="form-control" required />
           </div>
           <br>
           <label> Código postal  </label>
           <br>
           <div>
             <span class="icon-flag" id="logo"></span>
-            <input type="text" id="text" [(ngModel)]="cp" name="cp" class="form-control" />
+            <input type="text" id="text" [(ngModel)]="cp" name="cp" class="form-control" required />
           </div>
           <br>
           <label> Grado del delito </label>
           <div>
             <span class="icon-fire" id="logo"></span>
-            <select class="form-control" id="text" [(ngModel)]="grado_delito" name="grado_delito" (click)="CrimeCodes()">
+            <select class="form-control" id="text" [(ngModel)]="grado_delito" name="grado_delito" (click)="CrimeCodes()" required>
+              <option> </option>
               <option *ngFor="let i of y" value="{{ i.id }}"> {{ i.tipo }} | {{ i.comentario }} </option>
             </select>
           </div>
@@ -59,7 +60,8 @@
           <label> Tipo de delito </label>
           <div>
             <span class="icon-fire" id="logo"></span>
-            <select class="form-control" id="text" [(ngModel)]="tipo_delito" name="tipo_delito">
+            <select class="form-control" id="text" [(ngModel)]="tipo_delito" name="tipo_delito" required>
+              <option> </option>
               <option *ngFor="let i of x" value="{{ i.id }}"> {{ i.tipo }} | {{ i.comentario }} </option>
             </select>
           </div>
@@ -67,12 +69,15 @@
           <label> Fecha del delito </label>
           <div>
             <span class="icon-flag" id="logo"></span>
-            <input type="date" id="text" [(ngModel)]="date" name="date" class="form-control" />
+            <input type="date" id="text" [(ngModel)]="date" name="date" class="form-control" required />
           </div>
           <br>
           <br>
 
-          <input type="submit" value="Guardar datos" class="btn btn-primary" required />
+          <input type="submit" value="Guardar datos" class="btn btn-success" required />
+
+          <input type="reset" value="Limpiar campos" class="btn btn-warning" required />
+
         </form>
         <br>
         <br>
