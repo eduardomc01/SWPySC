@@ -31,10 +31,10 @@ export class AgregarDelitoComponent{
     if (sessionStorage.getItem("idUser") == null)
       this.router.navigate(["/Login"]);
 
+
     this.CrimeGrade();
 
   }
-
 
 
   registerCrime() {
@@ -49,7 +49,7 @@ export class AgregarDelitoComponent{
     this.http.post("Delitos/InsertDatasDelitos", JSON.parse(json)).subscribe(result => {
 
       if (result == 1)
-        alert("Datos guardados con exito !"); //<-- aun falta validar esto
+        alert("Datos guardados con exito !");
 
 
     });

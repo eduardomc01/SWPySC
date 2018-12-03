@@ -30,8 +30,10 @@ export class MapaCiComponent {
 
 interface datas {
 
+  /*
   latitud: number;
   longitud: number;
+  */
 
 }
 

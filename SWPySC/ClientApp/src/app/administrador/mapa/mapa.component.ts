@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { MouseEvent } from '@agm/core';
-import { MapsEventListener } from '@agm/core/services/google-maps-types';
 import { Router } from '@angular/router';
+import { observable } from 'rxjs';
 
 
 @Component({
@@ -14,22 +13,39 @@ import { Router } from '@angular/router';
 
 export class MapaComponent {
 
-
+  cantidad: number;
   d: datas[];
 
 
   constructor(private http: HttpClient, private router: Router) {
 
-
     if (sessionStorage.getItem("idUser") == null)
       this.router.navigate(["/Login"]);
 
+  }
 
 
-    this.http.get<datas[]>("Delitos/GetDatasDelitos").subscribe(result => {
+  SearchCrimes() {
 
-      console.log(result); //<--- verificando los resultados que retorna en forma de lista 
+    this.http.get<datas[]>("Delitos/GetSomeDatasDelitos?cantidad=" + this.cantidad).subscribe(result => {
+
+      console.log(result);
+
       this.d = result;
+
+    });
+
+  }
+
+
+  DeleteCrime(idCrime: number) {
+
+    console.log(idCrime);
+
+    this.http.post("Delitos/DeleteCrimes", idCrime).subscribe(result => {
+
+      if (result == 1)
+        alert("Delito ELIMINADO ");
 
     });
 
@@ -44,8 +60,9 @@ export class MapaComponent {
 
 interface datas {
 
-  latitud: number;
+  /*latitud: number;
   longitud: number;
+  */
 
 }
 

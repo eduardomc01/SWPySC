@@ -52,7 +52,7 @@
           <div>
             <span class="icon-fire" id="logo"></span>
             <select class="form-control" id="text" [(ngModel)]="grado_delito" name="grado_delito" (click)="CrimeCodes()" required>
-              <option> </option>
+            <option disabled> Escoge una opcion </option>
               <option *ngFor="let i of y" value="{{ i.id }}"> {{ i.tipo }} | {{ i.comentario }} </option>
             </select>
           </div>
@@ -61,7 +61,7 @@
           <div>
             <span class="icon-fire" id="logo"></span>
             <select class="form-control" id="text" [(ngModel)]="tipo_delito" name="tipo_delito" required>
-              <option> </option>
+              <option disabled> Escoge una opcion </option>
               <option *ngFor="let i of x" value="{{ i.id }}"> {{ i.tipo }} | {{ i.comentario }} </option>
             </select>
           </div>

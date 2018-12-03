@@ -10,9 +10,9 @@ import { HttpClient } from '@angular/common/http';
 export class EstadisticasCiComponent {
 
   // doughnut
-  public doughnutChartLabels: string[] = ["Robo", "Robo unidad habitacional", "Peleas", "Asesinato", "Robos a mano armada", "Secuestro"];
+  public doughnutChartLabels: string[] = ["Delitos de grado 1", "Delitos de grado 2", "Delitos de grado 3"];
   public doughnutChartType: string = 'doughnut';
-  public doughnutChartData: number[] = [, , , , , ,];
+  public doughnutChartData: number[] = [, , , ,];
 
   // Barra
   public barChartOptions: any = {
@@ -42,7 +42,6 @@ export class EstadisticasCiComponent {
   constructor(private http: HttpClient) {
 
     this.EstadisticasDona();
-   //  this.EstadisticasBarra();
 
   }
 
@@ -50,11 +49,10 @@ export class EstadisticasCiComponent {
   EstadisticasDona() {
 
 
-    this.http.get("Delitos/GetEstadisticsCrimes").subscribe(result => {
+    this.http.get("Delitos/GetEstadisticsCrimes?op="+1).subscribe(result => {
 
-     // console.log(result);
 
-      this.doughnutChartData = [result[1], result[2], result[3], result[4], result[5], result[6]];
+      this.doughnutChartData = [result[1], result[2], result[3]];
 
     });
 
@@ -66,8 +64,6 @@ export class EstadisticasCiComponent {
 
     let i;
     this.http.get("Delitos/GetEstadisticsMonth").subscribe(result => {
-
-     // console.log(result[0].enero);
 
       //let month: string[] = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"]; 
 

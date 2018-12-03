@@ -49,7 +49,7 @@ export class EstadisticasComponent {
 
 
     this.EstadisticasDona();
-   //  this.EstadisticasBarra();
+
 
   }
 
@@ -57,7 +57,7 @@ export class EstadisticasComponent {
   EstadisticasDona() {
 
 
-    this.http.get("Delitos/GetEstadisticsCrimes").subscribe(result => {
+    this.http.get("Delitos/GetEstadisticsCrimes?op=" + 2).subscribe(result => {
 
       console.log(result);
 

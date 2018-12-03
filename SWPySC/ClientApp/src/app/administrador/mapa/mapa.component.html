@@ -6,63 +6,74 @@
     </div>
     <div class='col-sm-9 body-content'>
 
-      <table class="table">
+        <table class="table">
 
-        <thead>
+          <thead>
 
-          <tr>
-            <th colspan="3">
+            <tr>
+              <th colspan="4">
 
-             <h1><b> MAPA </b></h1>
-              <agm-map [latitude]="19.1653" [longitude]="-96.1143" [zoom]="14">
-                <agm-circle *ngFor="let i of d"
-                            [latitude]="i.latitud"
-                            [longitude]="i.longitud"
-                            [fillOpacity]=".2"
-                            [radius]="50"
-                            [fillColor]="'red'"
-                            [circleDraggable]="false">
-                  <agm-marker *ngFor="let i of d"
+                <h1><b> MAPA </b></h1>
+                <agm-map [latitude]="19.1653" [longitude]="-96.1143" [zoom]="14">
+                  <agm-circle *ngFor="let i of d"
                               [latitude]="i.latitud"
-                              [longitude]="i.longitud">
-                    <agm-info-window>
-                      <strong> Dirección: [{{ i.direccion }}] </strong>
-                      <strong>  Código: [{{ i.idCodigo }}] </strong>
-                    </agm-info-window>
-                  </agm-marker>
-                </agm-circle>
-              </agm-map>
+                              [longitude]="i.longitud"
+                              [fillOpacity]=".2"
+                              [radius]="50"
+                              [fillColor]="'red'"
+                              [circleDraggable]="false">
+                    <agm-marker *ngFor="let i of d"
+                                [latitude]="i.latitud"
+                                [longitude]="i.longitud">
+                      <agm-info-window>
+                        <strong> Dirección: [{{ i.direccion }}] </strong>
+                        <strong>  Delito: [{{ i.tipoDelito }}] </strong>
+                      </agm-info-window>
+                    </agm-marker>
+                  </agm-circle>
+                </agm-map>
 
-            </th>
-          </tr>
+              </th>
+            </tr>
 
-          <tr>
-            <th colspan="3">
+            <tr>
+              <th colspan="4">
 
-              <h1> TABLA DE RESULTADOS </h1>
+                <h1> TABLA DE RESULTADOS </h1>
 
-            </th>
-          </tr>
+              </th>
+            </tr>
+
+            <tr>
+              <td>
+                <input type="number" class="form-control" [(ngModel)]="cantidad" name="cantidad" placeholder="Cantidad de delitos" />
+              </td>
+              <td colspan="3">
+                <input type="button" style="width:320px;" class="btn btn-success" value="Buscar" (click)="SearchCrimes()" />
+              </td>
+            </tr>
+
+            <tr>
+              <th> Dirección </th>
+              <th> Latitud </th>
+              <th> Longitud </th>
+              <th> Acciones </th>
+            </tr>
+
+          </thead>
 
 
+          <tbody>
+            <tr *ngFor="let i of d">
+              <td> {{i.direccion }}</td>
+              <td> {{i.latitud}} </td>
+              <td> {{i.longitud}} </td>
+              <td> <input type="button" class="btn btn-danger" value="Eliminar" (click)="DeleteCrime(i.id)" /></td>
+            </tr>
+          </tbody>
 
-          <tr>
-            <th> Dirección </th>
-            <th> Latitud </th>
-            <th> Longitud </th>
-          </tr>
-
-        </thead>
-
-
-        <tbody>
-          <tr *ngFor="let i of d">
-            <td> {{i.direccion }}</td>
-            <td> {{i.latitud}} </td>
-            <td> {{i.longitud}} </td>
-          </tr>
-        </tbody>
-      </table>
+        </table>
+  
 
     </div>
   </div>

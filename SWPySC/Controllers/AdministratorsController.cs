@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Session;
 
-
 using SWPySC.Models;
 
 namespace SWPySC.Controllers
