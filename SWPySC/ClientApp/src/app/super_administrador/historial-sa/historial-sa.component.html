@@ -1,0 +1,40 @@
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-sm-3'>
+      <app-nav-menu-sa></app-nav-menu-sa>
+    </div>
+    <div class='col-sm-9 body-content'>
+      <table class="table">
+        <thead>
+
+          <tr>
+            <th colspan="4"> <h1> <b> INFORMACIÓN DE MODIFICACIONES </b> </h1> </th>
+          </tr>
+          <tr>
+            <th> Nombre </th>
+            <th> Fecha de modificacion </th>
+            <th> Tipo de acción </th>
+            <th> Comentario </th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let i of d">
+            <td> {{ i.nombre }} </td>
+            <td> {{ i.dia }} </td>
+            <td>  {{ i.tipoAccion }} </td>
+            <td> {{ i.comentario }}</td>
+          </tr>
+        </tbody>
+
+        
+
+
+      </table>
+
+
+
+    </div>
+  </div>
+</div>

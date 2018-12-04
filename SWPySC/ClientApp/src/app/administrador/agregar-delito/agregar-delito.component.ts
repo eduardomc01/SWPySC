@@ -13,6 +13,8 @@ import { Router } from '@angular/router';
 
 export class AgregarDelitoComponent{
 
+  idUser: string = sessionStorage.getItem("idUser");
+
   lat: number;
   long: number;
   direccion: string;
@@ -48,9 +50,12 @@ export class AgregarDelitoComponent{
 
     this.http.post("Delitos/InsertDatasCrimes", JSON.parse(json)).subscribe(result => {
 
-      if (result == 1)
+      if (result == 1) {
         alert("Datos guardados con exito !");
 
+        this.registerActivityInsert();
+
+      }
 
     });
 
@@ -102,6 +107,19 @@ export class AgregarDelitoComponent{
     this.d.pop();
 
   }
+
+
+
+
+  registerActivityInsert() {
+
+    var json = JSON.stringify({ IdUsuario: this.idUser, IdAccion: 1 });
+
+    this.http.post('SuperAdministrators/InsertModifications', JSON.parse(json)).subscribe(() => { });
+
+
+  }
+
 
 
 }

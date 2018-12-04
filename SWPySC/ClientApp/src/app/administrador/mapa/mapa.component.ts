@@ -13,6 +13,8 @@ import { observable } from 'rxjs';
 
 export class MapaComponent {
 
+  idUser: string = sessionStorage.getItem("idUser");
+
   cantidad: number;
   d: datas[];
 
@@ -44,10 +46,26 @@ export class MapaComponent {
 
     this.http.post("Delitos/DeleteCrimes", idCrime).subscribe(result => {
 
-      if (result == 1)
+      if (result == 1) {
         alert("Delito ELIMINADO ");
 
+        this.registerActivityDelete();
+
+      }
+
     });
+
+  }
+
+
+
+
+  registerActivityDelete() {
+
+    var json = JSON.stringify({ IdUsuario: this.idUser, IdAccion: 3 });
+
+    this.http.post('SuperAdministrators/InsertModifications', JSON.parse(json)).subscribe(() => { });
+
 
   }
 

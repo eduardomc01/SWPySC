@@ -29,7 +29,9 @@ import { NavMenuCiComponent } from './ciudadano/nav-menu-ci/nav-menu-ci.componen
 import { MapaCiComponent } from './ciudadano/mapa-ci/mapa-ci.component';
 import { EstadisticasCiComponent } from './ciudadano/estadisticas-ci/estadisticas-ci.component';
 
-import { HistorialComponent } from './super_administrador/historial/historial.component';
+import { HistorialSaComponent } from './super_administrador/historial-sa/historial-sa.component';
+
+
 
 
 @NgModule({
@@ -55,7 +57,9 @@ import { HistorialComponent } from './super_administrador/historial/historial.co
 
     UsersSaComponent,
 
-    HistorialComponent,
+    HistorialSaComponent,
+
+
 
   ],
   imports: [
@@ -76,6 +80,7 @@ import { HistorialComponent } from './super_administrador/historial/historial.co
       { path: 'mapa-ci', component: MapaCiComponent },
       { path: 'estadisticas-ci', component: EstadisticasCiComponent },
       { path: 'users-sa', component: UsersSaComponent },
+      { path: 'historial-sa', component: HistorialSaComponent },
       { path: '', component: HomeCiComponent },
   
 

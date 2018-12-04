@@ -6,13 +6,12 @@ namespace SWPySC.Models
 {
     public partial class swpyscContext : DbContext
     {
-        private string conecctionString;
 
-        public swpyscContext(string _conecctionString)
+        private string connectionString;
+
+        public swpyscContext(string _connectionString)
         {
-
-            this.conecctionString = _conecctionString;
-
+            this.connectionString = _connectionString;
         }
 
         public swpyscContext(DbContextOptions<swpyscContext> options)
@@ -35,11 +34,8 @@ namespace SWPySC.Models
             if (!optionsBuilder.IsConfigured)
             {
 
-               optionsBuilder.UseMySql(conecctionString);
+                optionsBuilder.UseMySql(connectionString);
 
-                /* #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseMySql("Server=localhost;Database=swpysc;User=root;Password=123abc;");
-                */
             }
         }
 
@@ -221,7 +217,8 @@ namespace SWPySC.Models
 
                 entity.Property(e => e.Dia)
                     .HasColumnName("dia")
-                    .HasColumnType("date");
+                    .HasColumnType("timestamp")
+                    .HasDefaultValueSql("'CURRENT_TIMESTAMP'");
 
                 entity.Property(e => e.Hora)
                     .HasColumnName("hora")

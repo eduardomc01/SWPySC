@@ -76,8 +76,12 @@ export class UsersSaComponent {
       
       this.http.post("SuperAdministrators/EstatusSuperAdministrator?op="+3, idAdmin).subscribe( result => {
 
-        if (result == 1)
+        if (result == 1) {
           alert("Administrador BORRADO");
+
+          this.registerActivityDelete();
+
+        }
 
       });
 
@@ -85,6 +89,19 @@ export class UsersSaComponent {
 
 
   }
+
+
+
+  registerActivityDelete() {
+
+    var json = JSON.stringify({ IdUsuario: this.idUser, IdAccion: 3 });
+
+    this.http.post('SuperAdministrators/InsertModifications', JSON.parse(json)).subscribe(() => { });
+
+
+  }
+
+
 
 
 }

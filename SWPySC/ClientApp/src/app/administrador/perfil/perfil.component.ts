@@ -10,9 +10,10 @@ import { Router } from '@angular/router';
 
 export class PerfilComponent {
 
+  idUser: string = sessionStorage.getItem("idUser");
+
   d: datas[];
 
-  idUser: string = sessionStorage.getItem("idUser");
   name: string;
   email: string;
   pass: string;
@@ -47,6 +48,8 @@ export class PerfilComponent {
         alert("Registro Actualizado!");
         this.router.navigate(["/perfil"]);
 
+        this.registerActivityUpdate();
+
       } else {
 
         alert("Error al guardar los datos");
@@ -55,6 +58,17 @@ export class PerfilComponent {
 
     });
 
+
+
+  }
+
+
+
+  registerActivityUpdate() {
+
+    var json = JSON.stringify({ IdUsuario: this.idUser, IdAccion: 2 });
+
+    this.http.post('SuperAdministrators/InsertModifications', JSON.parse(json)).subscribe(() => { });
 
 
   }

@@ -57,6 +57,7 @@ namespace SWPySC.Controllers
 
 
 
+
         [HttpPost("[action]")]
         public int UpdateAdministrator(int id, [FromBody] Registros datas)
         {
@@ -101,8 +102,53 @@ namespace SWPySC.Controllers
 
         }
 
+
+        [HttpGet("[action]")]
+        public List<DatasHistorialUsuario> GetAllChangeAdministrators()
+        {
+
+            var context = HttpContext.RequestServices.GetService(typeof(swpyscContext)) as swpyscContext;
+
+            var list = (from a in context.Registros 
+                        
+                        join  e in context.Historialusuarios on a.Id equals e.IdUsuario
+
+                        join o in context.Acciones on e.IdAccion equals o.Id
+
+                        select new DatasHistorialUsuario
+
+                        {
+
+                            Nombre = a.Nombre,
+                            Hora = e.Hora,
+                            Dia = e.Dia,
+                            TipoAccion = o.Tipo,
+                            Comentario = o.Comentario
+
+                        }
+                        
+                        
+                        ).ToList();
+
+            return list;
+
+        }
+
+
     }
 
+
+
+    public partial class DatasHistorialUsuario
+    {
+       
+        public string Nombre { get; set; }
+        public TimeSpan? Hora { get; set; }
+        public DateTime? Dia { get; set; }
+        public string TipoAccion { get; set; }
+        public string Comentario { get; set; }
+
+    }
 
 
 

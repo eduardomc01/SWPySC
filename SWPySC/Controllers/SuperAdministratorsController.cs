@@ -143,6 +143,22 @@ namespace SWPySC.Controllers
         }
 
 
+        [HttpPost("[action]")]
+        public int InsertModifications([FromBody] Historialusuarios datas)
+        {
+
+            var context = HttpContext.RequestServices.GetService(typeof(swpyscContext)) as swpyscContext;
+
+
+            context.Historialusuarios.Add(datas);
+            context.SaveChanges();
+
+            return 1; //<--- falta validar esta parte
+
+
+        }
+
+
 
 
     }

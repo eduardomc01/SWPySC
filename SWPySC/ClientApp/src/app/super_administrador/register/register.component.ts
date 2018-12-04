@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css', './icons-downloads.component.css']
 })
-export class RegisterComponent{
+export class RegisterComponent {
 
   constructor(private http: HttpClient, private router: Router) {
 
@@ -16,26 +16,45 @@ export class RegisterComponent{
       this.router.navigate(["/Login"]);
 
 
-
+     
   }
 
   name: string;
   email: string;
   pass: string;
 
+  idUser: string = sessionStorage.getItem("idUser");
+
   registerAdmin() {
-     
 
     var json = JSON.stringify({ Nombre: this.name, Correo: this.email, Password: this.pass });
 
-    this.http.post('Administrators/InsertAdmin', JSON.parse(json)).subscribe( result => {
+    this.http.post('Administrators/InsertAdmin', JSON.parse(json)).subscribe(result => {
 
-      if (result == 1)
+      if (result == 1) {
         alert("Administrador agregado");
-      else
+
+        this.registerActivity();
+
+      }
+
+      else {
         alert("Ops ocurrio algun error");
+      }
+
     });
 
+  } 
+
+  registerActivity() {
+
+    var json = JSON.stringify({ IdUsuario: this.idUser, IdAccion: 1 });
+
+    this.http.post('SuperAdministrators/InsertModifications', JSON.parse(json)).subscribe(() => { });
+
+
   }
+
+
 
 }
