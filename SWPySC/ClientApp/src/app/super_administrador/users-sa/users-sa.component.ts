@@ -67,7 +67,7 @@ export class UsersSaComponent {
   }
 
 
-  DeletAdmin(idAdmin: number) {
+  DeleteAdmin(idAdmin: number) {
 
     let op = confirm("Estas seguro de ELIMINAR de este Administrador ");
 
@@ -90,6 +90,8 @@ export class UsersSaComponent {
 }
 
 interface datas {
+
+
 
 }
 

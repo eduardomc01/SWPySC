@@ -27,7 +27,7 @@ export class MapaComponent {
 
   SearchCrimes() {
 
-    this.http.get<datas[]>("Delitos/GetSomeDatasDelitos?cantidad=" + this.cantidad).subscribe(result => {
+    this.http.get<datas[]>("Delitos/GetSomeDatasCrimes?cantidad=" + this.cantidad).subscribe(result => {
 
       console.log(result);
 

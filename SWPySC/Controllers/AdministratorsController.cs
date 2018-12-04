@@ -77,7 +77,7 @@ namespace SWPySC.Controllers
 
 
         [HttpGet("[action]")]
-        public List<Datas> GetAdministratorDatasHome(int id)
+        public List<DatasSuperAdmin> GetAdministratorDatasHome(int id)
         {
 
             var context = HttpContext.RequestServices.GetService(typeof(swpyscContext)) as swpyscContext;
@@ -87,7 +87,7 @@ namespace SWPySC.Controllers
                         join e in context.Tipousuarios on a.IdTipoUsuario equals e.Id
 
                         where a.Id == id
-                        select new Datas
+                        select new DatasSuperAdmin
                         {
 
                             Nombre = a.Nombre,

@@ -41,15 +41,15 @@ export class EstadisticasCiComponent {
 
   constructor(private http: HttpClient) {
 
-    this.EstadisticasDona();
+    this.StadisticsDonut();
 
   }
 
 
-  EstadisticasDona() {
+  StadisticsDonut() {
 
 
-    this.http.get("Delitos/GetEstadisticsCrimes?op="+1).subscribe(result => {
+    this.http.get("Delitos/GetStadisticsCrimes?op="+1).subscribe(result => {
 
 
       this.doughnutChartData = [result[1], result[2], result[3]];
@@ -60,10 +60,10 @@ export class EstadisticasCiComponent {
 
 
    
-  EstadisticasBarra() {
+  StadisticsBar() {
 
     let i;
-    this.http.get("Delitos/GetEstadisticsMonth").subscribe(result => {
+    this.http.get("Delitos/GetStadisticsMonth").subscribe(result => {
 
       //let month: string[] = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"]; 
 

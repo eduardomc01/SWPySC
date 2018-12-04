@@ -12,15 +12,15 @@ namespace SWPySC.Controllers
     [Route("[controller]")]
     public class LoginController : Controller
     {
-        private List<Datas> list;
+        private List<DatasLogin> list;
 
         [HttpPost("[action]")]
-        public List<Datas> Admin([FromBody] Datas datas)
+        public List<DatasLogin> Admin([FromBody] DatasLogin datas)
         {
 
             var context = HttpContext.RequestServices.GetService(typeof(swpyscContext)) as swpyscContext;
 
-            this.list = (from e in context.Registros where e.Correo == datas.User && e.Password == datas.Pass select new Datas
+            this.list = (from e in context.Registros where e.Correo == datas.User && e.Password == datas.Pass select new DatasLogin
             {
                 Id = e.Id,
                 IdTipoUsuario = e.IdTipoUsuario
@@ -36,7 +36,7 @@ namespace SWPySC.Controllers
     }
 
 
-    public partial class Datas
+    public partial class DatasLogin
     {
 
         public int Id { get; set; }

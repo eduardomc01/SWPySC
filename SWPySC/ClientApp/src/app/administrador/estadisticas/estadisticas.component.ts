@@ -48,16 +48,16 @@ export class EstadisticasComponent {
 
 
 
-    this.EstadisticasDona();
+    this.StadisticsDonut();
 
 
   }
 
 
-  EstadisticasDona() {
+  StadisticsDonut() {
 
 
-    this.http.get("Delitos/GetEstadisticsCrimes?op=" + 2).subscribe(result => {
+    this.http.get("Delitos/GetStadisticsCrimes?op=" + 2).subscribe(result => {
 
       console.log(result);
 
@@ -69,10 +69,10 @@ export class EstadisticasComponent {
 
 
    
-  EstadisticasBarra() {
+  StadisticsBar() {
 
     let i;
-    this.http.get("Delitos/GetEstadisticsMonth").subscribe(result => {
+    this.http.get("Delitos/GetStadisticsMonth").subscribe(result => {
 
       console.log(result[0].enero);
 

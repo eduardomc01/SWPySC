@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 
 export class PerfilComponent {
 
-  public d: datas[];
+  d: datas[];
 
   idUser: string = sessionStorage.getItem("idUser");
   name: string;
@@ -66,8 +66,10 @@ export class PerfilComponent {
 
 interface datas {
 
+  
   nombre: string;
   correo: string;
   password: string;
+  
 
 }

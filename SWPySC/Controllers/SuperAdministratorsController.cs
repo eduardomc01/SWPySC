@@ -52,7 +52,7 @@ namespace SWPySC.Controllers
 
 
         [HttpGet("[action]")]
-        public List<Datas> GetSuperAdministratorDatasHome(int id)
+        public List<DatasSuperAdmin> GetSuperAdministratorDatasHome(int id)
         {
 
             var context = HttpContext.RequestServices.GetService(typeof(swpyscContext)) as swpyscContext;
@@ -61,7 +61,7 @@ namespace SWPySC.Controllers
 
                         join e in context.Tipousuarios on a.IdTipoUsuario equals e.Id
 
-                        where a.Id == id select new Datas
+                        where a.Id == id select new DatasSuperAdmin
                         {
 
                             Nombre = a.Nombre,
@@ -78,7 +78,7 @@ namespace SWPySC.Controllers
 
 
         [HttpGet("[action]")]
-        public List<Datas> GetAllSuperAdministrator()
+        public List<DatasSuperAdmin> GetAllSuperAdministrator()
         {
 
             var context = HttpContext.RequestServices.GetService(typeof(swpyscContext)) as swpyscContext;
@@ -91,7 +91,7 @@ namespace SWPySC.Controllers
 
                         where a.IdTipoUsuario == 2
 
-                        select new Datas
+                        select new DatasSuperAdmin
                         {
                             _Id = a.Id,
                             Nombre = a.Nombre,
@@ -147,8 +147,8 @@ namespace SWPySC.Controllers
 
     }
 
-
-    public partial class Datas
+    
+    public partial class DatasSuperAdmin
     {
         public int _Id { get; set; }
         public string Nombre { get; set; }
@@ -158,5 +158,5 @@ namespace SWPySC.Controllers
         public string Date { get; set; }
 
     }
-
+   
 }

@@ -12,7 +12,7 @@
                       [latitude]="i.latitud"
                       [longitude]="i.longitud"
                       [markerDraggable]="true"
-                      (markerRightClick)="MarkerDelet()">
+                      (markerRightClick)="MarkerDelete()">
           </agm-marker>
         </agm-map>
       </div>
@@ -33,7 +33,7 @@
           <input type="number" id="text" [(ngModel)]="long" class="form-control" required readonly />
         </div>
         <br>
-        <form (ngSubmit)="registerCrime()">
+        <form (ngSubmit)="RegisterCrime()">
           <label> Dirección </label>
           <br>
           <div>

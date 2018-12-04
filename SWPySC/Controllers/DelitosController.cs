@@ -14,7 +14,7 @@ namespace SWPySC.Controllers
     {
 
         [HttpGet("[action]")]
-        public List<Delitos> GetDatasDelitos()
+        public List<Delitos> GetDatasCrimes()
         {
 
             var context = HttpContext.RequestServices.GetService(typeof(swpyscContext)) as swpyscContext;
@@ -27,7 +27,7 @@ namespace SWPySC.Controllers
 
 
         [HttpGet("[action]")]
-        public List<DatasDelitos> GetSomeDatasDelitos(int cantidad)
+        public List<DatasCrimes> GetSomeDatasCrimes(int cantidad)
         {
 
             var context = HttpContext.RequestServices.GetService(typeof(swpyscContext)) as swpyscContext;
@@ -36,7 +36,7 @@ namespace SWPySC.Controllers
                         
                         join e in context.Codigos on a.IdCodigo equals e.Id
 
-                        select new DatasDelitos {
+                        select new DatasCrimes {
 
                             Id = a.Id,
                             Direccion = a.Direccion,
@@ -52,7 +52,7 @@ namespace SWPySC.Controllers
 
 
         [HttpGet("[action]")]
-        public List<Codigos> GetCodigosDelitos()
+        public List<Codigos> GetCodesCrimes()
         {
 
             var context = HttpContext.RequestServices.GetService(typeof(swpyscContext)) as swpyscContext;
@@ -66,7 +66,7 @@ namespace SWPySC.Controllers
 
 
         [HttpGet("[action]")]
-        public int[] GetEstadisticsCrimes(int op)
+        public int[] GetStadisticsCrimes(int op)
         {
 
             int[] valores = new int[10];
@@ -105,7 +105,7 @@ namespace SWPySC.Controllers
 
 
         [HttpGet("[action]")]
-        public List<Historialdelitomes> GetEstadisticsMonth()
+        public List<Historialdelitomes> GetStadisticsMonth()
         {
 
             var context = HttpContext.RequestServices.GetService(typeof(swpyscContext)) as swpyscContext;
@@ -137,7 +137,7 @@ namespace SWPySC.Controllers
 
 
         [HttpGet("[action]")]
-        public List<Gradodelito> GetGradeDelitos()
+        public List<Gradodelito> GetGradeCrimes()
         {
 
             var context = HttpContext.RequestServices.GetService(typeof(swpyscContext)) as swpyscContext;
@@ -151,7 +151,7 @@ namespace SWPySC.Controllers
 
 
         [HttpPost("[action]")]
-        public int InsertDatasDelitos([FromBody] Delitos data)
+        public int InsertDatasCrimes([FromBody] Delitos data)
         {
 
             var context = HttpContext.RequestServices.GetService(typeof(swpyscContext)) as swpyscContext;
@@ -185,7 +185,7 @@ namespace SWPySC.Controllers
     }
 
 
-    public partial class DatasDelitos
+    public partial class DatasCrimes
     {
         public int Id { get; set; }
         public string Direccion { get; set; }

@@ -37,7 +37,7 @@ export class AgregarDelitoComponent{
   }
 
 
-  registerCrime() {
+  RegisterCrime() {
 
     if (!this.lat || !this.long || !this.direccion || !this.cp || !this.grado_delito || !this.tipo_delito || !this.date) {
       alert("OJO: Campos sin rellenar, porfavor complete todos los campos porfavor");
@@ -46,7 +46,7 @@ export class AgregarDelitoComponent{
 
     var json = JSON.stringify({ Latitud: this.lat, Longitud: this.long, Direccion: this.direccion, Cp: this.cp, IdGd: this.grado_delito, IdCodigo: this.tipo_delito, fecha: this.date });
 
-    this.http.post("Delitos/InsertDatasDelitos", JSON.parse(json)).subscribe(result => {
+    this.http.post("Delitos/InsertDatasCrimes", JSON.parse(json)).subscribe(result => {
 
       if (result == 1)
         alert("Datos guardados con exito !");
@@ -60,7 +60,7 @@ export class AgregarDelitoComponent{
 
   CrimeGrade() {
 
-    this.http.get<datasCodes[]>("Delitos/GetGradeDelitos").subscribe(result => {
+    this.http.get<datasCodes[]>("Delitos/GetGradeCrimes").subscribe(result => {
 
       this.y = result;
 
@@ -72,7 +72,7 @@ export class AgregarDelitoComponent{
 
   CrimeCodes() {
 
-    this.http.get<datasCodes[]>("Delitos/GetCodigosDelitos").subscribe(result => {
+    this.http.get<datasCodes[]>("Delitos/GetCodesCrimes").subscribe(result => {
 
       this.x = result;
 
@@ -97,7 +97,7 @@ export class AgregarDelitoComponent{
   }
 
 
-  MarkerDelet() {
+  MarkerDelete() {
 
     this.d.pop();
 

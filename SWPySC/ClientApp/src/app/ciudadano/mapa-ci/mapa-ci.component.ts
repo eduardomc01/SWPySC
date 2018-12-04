@@ -15,7 +15,7 @@ export class MapaCiComponent {
 
   constructor(private http: HttpClient) {
 
-    this.http.get<datas[]>("Delitos/GetDatasDelitos").subscribe(result => {
+    this.http.get<datas[]>("Delitos/GetDatasCrimes").subscribe(result => {
 
       this.d = result;
 
