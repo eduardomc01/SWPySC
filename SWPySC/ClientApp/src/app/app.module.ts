@@ -29,6 +29,8 @@ import { NavMenuCiComponent } from './ciudadano/nav-menu-ci/nav-menu-ci.componen
 import { MapaCiComponent } from './ciudadano/mapa-ci/mapa-ci.component';
 import { EstadisticasCiComponent } from './ciudadano/estadisticas-ci/estadisticas-ci.component';
 
+import { HistorialComponent } from './super_administrador/historial/historial.component';
+
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { EstadisticasCiComponent } from './ciudadano/estadisticas-ci/estadistica
     PerfilSaComponent,
 
     UsersSaComponent,
+
+    HistorialComponent,
 
   ],
   imports: [
